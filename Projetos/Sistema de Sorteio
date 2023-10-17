@@ -1,0 +1,13 @@
+from random import choice
+print('Sorteio do Produto Tal')
+n1 = input('Nome 1: ')
+n2 = input('Nome 2: ')
+n3 = input('Nome 3: ')
+n4 = input('Nome 4: ')
+n5 = input('Nome 5: ')
+n6 = input('Nome 6: ')
+print('Vamos lá, chegou a HORA!!!')
+print(' '*100000)
+lista = (n1, n2, n3, n4, n5, n6)
+sorteado = choice(lista)
+print('Sorteado foi: {}'.format(sorteado))

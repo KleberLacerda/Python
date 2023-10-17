@@ -1,0 +1,13 @@
+import time
+from random import randint
+
+print('Tente adivinhar qual número estou pensando...')
+pc = randint(0, 10)  #randint faz um sorte aleatorio
+print('<>' * 30)
+player = int(input('Qual número pensei? '))
+print('...............')
+time.sleep(3)
+if player == pc:
+    print('Acertou!')
+else:
+    print('Errou kkk \nPensei no {}'.format(pc))
