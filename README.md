@@ -1,2 +1,2 @@
 # Python
- Programas feito na linguagem Python
+ Programas feitos na Linguagem Python.
