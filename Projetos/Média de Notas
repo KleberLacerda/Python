@@ -1,0 +1,23 @@
+nome = str(input('Nome do aluno: '))
+print('-=-'*2, '\33[4;39;40m 1º Bimestre\33[m','-=-'*2)
+b1_n1 = float(input('1º Nota: '))
+b1_n2 = float(input('2º Nota: '))
+b1_n3 = float(input('3º Nota: '))
+b1_n4 = float(input('4º Nota: '))
+medb1 = (b1_n1 + b1_n2 + b1_n3 + b1_n4) / 4
+
+print('-=-'*2, '\33[4;39;40m 2º Bimestre\33[m','-=-'*2)
+b2_n1 = float(input('1º Nota: '))
+b2_n2 = float(input('2º Nota: '))
+b2_n3 = float(input('3º Nota: '))
+b2_n4 = float(input('4º Nota: '))
+medb2 = (b2_n1 + b2_n2 + b2_n3 + b2_n4) / 4
+medfinal = (medb1 + medb2) / 2
+print('Média {:.1f}'.format(medfinal))
+
+if medfinal > 7:
+    print('\33[1;32;49m Aprovado!\33[m {}, Parabêns. \nBoas Férias!'.format(nome))
+elif medfinal >= 5 and medfinal < 7:
+    print('\33[1;33;49m Recuperação!\33[m {}, precisa estudar mais.'.format(nome))
+else:
+    print('\33[1;31;49m Reprovado!\33[m')
