@@ -1,34 +1,53 @@
 from time import sleep
 print(' -=-=-\033[4;39m Calculadora Básica\033[m -=-=-')
-n1 = int(input('1º Número: '))
-n2 = int(input('2º Número: '))
-opcao = 0
-while opcao != 6:
-    print(' ')
-    print('>> \033[1;34;49mMENU\033[m <<\n[1] Somar\n[2] Subtrair\n[3] Multiplicar\n[4] Dividir'
-          '\n[5] Maior\n[6] Finalizar')
-    opcao = int(input('>>> Digite: '))
-    print('-=' * 20)
-    if opcao == 1:
-        so = n1 + n2
-        print('\033[4;39;40m{} + {} = {}\033[m'.format(n1, n2, so))
-    elif opcao == 2:
-        su = n1 - n2
-        print('\033[4;39;40m{} - {} = {}\033[m'.format(n1, n2, su))
-    elif opcao == 3:
-        m = n1 * n2
-        print('\033[4;39;40m{} x {} = {}\033[m'.format(n1, n2, m))
-    elif opcao == 4:
-        d = n1 / n2
-        print('\033[4;39;40m{} / {} = {}\033[m'.format(n1, n2, d))
-    elif opcao == 5:
-        if n1 > n2:
-            print('\033[4;39;40mMaior {}\033[m'.format(n1))
-        else:
-            print('\033[4;39;40mMaior {}\033[m'.format(n2))
-    elif opcao == 6:
-        print('')
+while True:
+    num_1 = input('Digite um número: ')
+    num_2 = input('Digite outro número: ')
+    op = input('Digite o operador [+|-|/|*]: ')
+
+    numeros_validos = None
+    try:  
+        num_1_float = float(num_1)
+        num_2_float = float(num_2)
+        numeros_validos = True
+    except:
+        numeros_validos = None
+
+    if numeros_validos is None:
+        print('Um ou ambos números digitados são inválidos.')
+        print('Tente novamente.')
+        print('-='*20)
+        continue
+
+    OPERADORES_PERMITIDOS = '+-/*'
+
+    if op not in OPERADORES_PERMITIDOS:
+        print('Operador inválido.')
+        print('Tente novamente.')
+        print('-='*20)
+        continue
+
+    if len(op) > 1:
+        print('Digite apenas um operador.')
+        print('-='*20)
+        continue
+    
+    if op == '+':
+        print(f'Resultado = {num_1_float + num_2_float:.2f}')
+    elif op == '-':
+        print(f'Resultado = {num_1_float - num_2_float:.2f}')
+    elif op == '/':
+        print(f'Resultado = {num_1_float / num_2_float:.2f}')
     else:
-        print('\033[4;31;40mOpção Inválida\033[m')
+        print(f'Resultado = {num_1_float * num_2_float:.2f}')
+
+
+    sair = input('Quer sair? [s]im: ').lower().startswith('s')
+    print('-='*20)
+
+    if sair is True:
+        break
+
 print('Finalizando...')
 sleep(1)
+print('Programa Encerrado.')
