@@ -1,4 +1,0 @@
-radar = float(input('Velocidade? '))
-multa = (radar - 80) * 7
-if radar > 80:
-    print('Ultrapassou o limite de 80km/h. \nMultado no valor dê: R${:.2f}. '.format(multa))
