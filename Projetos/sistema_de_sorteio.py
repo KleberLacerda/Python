@@ -1,13 +1,21 @@
 from random import choice
-print('Sorteio do Produto Tal')
-n1 = input('Nome 1: ')
-n2 = input('Nome 2: ')
-n3 = input('Nome 3: ')
-n4 = input('Nome 4: ')
-n5 = input('Nome 5: ')
-n6 = input('Nome 6: ')
-print('Vamos lá, chegou a HORA!!!')
-print(' '*100000)
-lista = (n1, n2, n3, n4, n5, n6)
+from time import sleep
+import os
+
+print('Sorteio do Produto XXXXX')
+print('='*20)
+print('Escreva o nome dos participantes')
+lista = []
+while True:
+    nome = str(input('Nome: '))
+    lista.append(nome)
+    encerrar = str(input('Acresentar mais alguém [S/N]: ')).upper()
+    os.system('cls')
+    
+    if encerrar == 'N':
+        ('Vamos fazer o SORTEIO!!!')
+        break
+   
 sorteado = choice(lista)
-print('Sorteado foi: {}'.format(sorteado))
+print('Nome SORTEADO foi -> ', end=''), sleep(3), print(f'{sorteado:>20}')
+print()
