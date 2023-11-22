@@ -16,17 +16,17 @@ while True:
     if decisao == 'N':
         break
 
-'''
+
 print('='*40)
 print(f'{'Nº':<5}{'NOME':<10}{'MÉDIA':>8}')
 print('-'*30)
-for k, v in aluno.items():
-    print(f'{k:.<4}{v['nome']:<10}{v['media']:>8.1f}')
-'''
+for i, v in enumerate(aluno.values()):
+    print(f'{i:.<4}{v {aluno['nome']}:<10}{v['media']:>8.1f}')
+
 
 
 if aluno['media'] >= 7:
-    print(f'{aluno['nome'], 'APROVADO!'}')
+    print(f'{aluno['nome'], 'APROVADO! com média', {aluno['media']} }')
 else:
     print(f'{aluno['nome'], 'REPROVADO!'}')
 
